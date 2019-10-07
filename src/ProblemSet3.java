@@ -30,8 +30,8 @@ public class ProblemSet3 {
         
         //ps.sign();          // executes Exercise 1
         //ps.parity();        // executes Exercise 2
-        ps.ordered();       // executes Exercise 3
-        //ps.gpa();           // executes Exercise 4
+        //ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
        // ps.grade();         // executes Exercise 5
         //ps.cards();         // executes Exercise 6
         //ps.leapYear();      // executes Exercise 7
@@ -128,6 +128,26 @@ public class ProblemSet3 {
     
     public void gpa() {
 
+        double letterValue;
+        double additionalValue;
+
+        System.out.print("Enter a letter grade: ");
+        String grade = in.nextString() ;
+        in.nextLine();
+
+        if ( grade.substring(0).equals("A")){
+            letterValue = 4.00;
+        } else if (grade.substring(0).equals("B")){
+            letterValue = 3.00;
+        } else if (grade.substring(0).equals("C")){
+            letterValue = 2.00;
+        } else if (grade.substring(0).equals("D")){
+            letterValue = 1.00;
+        } else if (grade.substring(0).equals("F")){
+            letterValue = 0.00;
+        }
+
+        if(grade.substring(1).equals("+"))
     }
     
     /*
