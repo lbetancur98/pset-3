@@ -28,16 +28,16 @@ public class ProblemSet3 {
         
         // comment out or uncomment as needed
         
-        ps.sign();          // executes Exercise 1
-        ps.parity();        // executes Exercise 2
+        //ps.sign();          // executes Exercise 1
+        //ps.parity();        // executes Exercise 2
         ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-        ps.grade();         // executes Exercise 5
-        ps.cards();         // executes Exercise 6
-        ps.leapYear();      // executes Exercise 7
-        ps.state();         // executes Exercise 8
-        ps.months();        // executes Exercise 9
-        ps.salary();        // executes Exercise 10
+        //ps.gpa();           // executes Exercise 4
+       // ps.grade();         // executes Exercise 5
+        //ps.cards();         // executes Exercise 6
+        //ps.leapYear();      // executes Exercise 7
+        //ps.state();         // executes Exercise 8
+        //ps.months();        // executes Exercise 9
+        //ps.salary();        // executes Exercise 10
         
         in.close();
     }
@@ -49,6 +49,18 @@ public class ProblemSet3 {
      */
     
     public void sign() {
+        System.out.print("Enter an integer: ");
+        int outputNumber = in.nextInt() ;
+        in.nextLine();
+
+        if(outputNumber == 0) {
+            System.out.println("Zero.");
+        } else if (outputNumber > 0){
+            System.out.println("Positive.");
+        } else if (outputNumber < 0){
+            System.out.println("Negative.");
+        }
+
 
     }
     
@@ -60,6 +72,15 @@ public class ProblemSet3 {
     
     public void parity() {
 
+        System.out.print("Enter an integer: ");
+        int outputNumber = in.nextInt() ;
+        in.nextLine();
+
+        if ((outputNumber % 2) == 0){
+            System.out.println("Even.");
+        }  else {
+            System.out.println("Odd.");
+        }
     }
     
     /*
@@ -70,6 +91,33 @@ public class ProblemSet3 {
     
     public void ordered() {
 
+        System.out.println("Enter three integers.\n");
+       
+        System.out.print("Enter integer: ");
+        int numberOne = in.nextInt() ;
+        in.nextLine();
+
+        System.out.print("Enter integer: ");
+        int numberTwo = in.nextInt() ;
+        in.nextLine();
+
+        System.out.print("Enter integer: ");
+        int numberThree = in.nextInt() ;
+        in.nextLine();
+
+        if(numberOne == numberTwo && numberTwo == numberThree){
+            System.out.println("\nSame.");
+        } else if (numberOne < numberTwo && numberTwo < numberThree){
+            System.out.println("\nStrictly Increasing.");
+        } else if (numberOne <= numberTwo && numberTwo <= numberThree){
+            System.out.println("\nIncreasing.");
+        } else if (numberOne > numberTwo && numberTwo > numberThree){
+            System.out.println("\nStrictly Decreasing.");
+        } else if (numberOne >= numberTwo && numberTwo >= numberThree){
+            System.out.println("\nDecreasing.");
+        } else {
+            System.out.println("\nUnordered.");
+        }
     }
     
     /*
