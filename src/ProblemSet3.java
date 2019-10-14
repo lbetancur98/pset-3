@@ -128,27 +128,75 @@ public class ProblemSet3 {
     
     public void gpa() {
 
-        double letterValue;
-        double additionalValue;
+        
 
         System.out.print("Enter a letter grade: ");
-        String grade = in.nextString() ;
-        in.nextLine();
+        String grade = in.nextLine() ;
+        double letterValue= -1;
+        double additionalValue = -1;
+        double GPA;
+        grade = grade.toUpperCase();
 
-        if ( grade.substring(0).equals("A")){
-            letterValue = 4.00;
-        } else if (grade.substring(0).equals("B")){
-            letterValue = 3.00;
-        } else if (grade.substring(0).equals("C")){
-            letterValue = 2.00;
-        } else if (grade.substring(0).equals("D")){
-            letterValue = 1.00;
-        } else if (grade.substring(0).equals("F")){
-            letterValue = 0.00;
+        if (grade.equals("A") || grade.equals("B") || grade.equals("C") || grade.equals("D")){
+            if(grade.equals("A")){
+                letterValue = 4.00;
+                System.out.printf("\nYour GPA is %.2f", letterValue);
+            } else if (grade.equals("B")){
+                letterValue = 3.00;
+                System.out.printf("\nYour GPA is %.2f", letterValue);
+            } else if (grade.equals("C")){
+                letterValue = 2.00;
+                System.out.printf("\nYour GPA is %.2f", letterValue);
+            } else if (grade.equals("D")){
+                letterValue = 1.00;
+                System.out.printf("\nYour GPA is %.2f", letterValue);
+            }
+
+
+        } else {
+
+
+
+            if ( Character.toString(grade.charAt(0)).equals("A")){
+                letterValue = 4.00;
+            } else if (Character.toString(grade.charAt(0)).equals("B")){
+                letterValue = 3.00;
+            } else if (Character.toString(grade.charAt(0)).equals("C")){
+                letterValue = 2.00;
+            } else if (Character.toString(grade.charAt(0)).equals("D")){
+                letterValue = 1.00;
+            } else if (Character.toString(grade.charAt(0)).equals("F")){
+                letterValue = 0.00;
+            } 
+    
+            
+    
+            if (!(Character.toString(grade.charAt(0)).equals("F"))){
+                if(grade.substring(1).equals("+")){
+                    additionalValue = .33;
+                    GPA = letterValue + additionalValue;
+                    System.out.printf("\nYour GPA is %.2f", GPA);
+                    
+                } else if (grade.substring(1).equals("-")){
+                    additionalValue = -0.33;
+                    GPA = letterValue + additionalValue;
+                    System.out.printf("\nYour GPA is %.2f", GPA);
+    
+                } else {
+                    System.out.println("\nThat's not a valid letter grade.");
+                }
+            } else if(grade.substring(1).equals("+") || grade.substring(1).equals("-")) {
+                System.out.println("\nYour GPA is 0.00.");
+            } else {
+                System.out.println("\nThat's not a valid letter grade.");
+            }
+
         }
 
-        if(grade.substring(1).equals("+"))
-    }
+        
+        
+       
+    } 
     
     /*
      * Exercise 5.
@@ -157,7 +205,7 @@ public class ProblemSet3 {
      */
     
     public void grade() {
-
+        
     }
     
     /*
