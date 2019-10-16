@@ -31,13 +31,13 @@ public class ProblemSet3 {
         //ps.sign();          // executes Exercise 1
         //ps.parity();        // executes Exercise 2
         //ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-       // ps.grade();         // executes Exercise 5
+        //ps.gpa();           // executes Exercise 4
+       //ps.grade();         // executes Exercise 5
         //ps.cards();         // executes Exercise 6
         //ps.leapYear();      // executes Exercise 7
         //ps.state();         // executes Exercise 8
         //ps.months();        // executes Exercise 9
-        //ps.salary();        // executes Exercise 10
+        ps.salary();        // executes Exercise 10
         
         in.close();
     }
@@ -204,8 +204,27 @@ public class ProblemSet3 {
      * Prompt the user to enter a grade. What's the corresponding letter grade?
      */
     
-    public void grade() {
-        
+    public void grade() { 
+
+        System.out.print("\nEnter a grade: ");
+        double grade = in .nextDouble();
+        in .nextLine();
+
+        if (grade > 100) {
+            System.out.println("\nGrades above 100 are invalid.");
+        } else if (grade < 0) {
+            System.out.println("\nGrades below 0 are invalid.");
+        } else if (grade <= 100 && grade >= 90) {
+            System.out.println("\nYou received an A.");
+        } else if (grade < 90 && grade >= 80) {
+            System.out.println("\nYou received a B.");
+        } else if (grade < 80 && grade >= 70) {
+            System.out.println("\nYou received a C.");
+        } else if (grade < 70 && grade >= 60) {
+            System.out.println("\nYou received a D.");
+        } else {
+            System.out.println("\nYou received an F.");
+        }
     }
     
     /*
@@ -216,6 +235,59 @@ public class ProblemSet3 {
     
     public void cards() {
 
+        String rank = "A";
+        String suit = "A";
+        char thirdCharacter = 'A';
+
+        System.out.print("\nEnter a card: ");
+        String card = in .nextLine();
+        card = card.toUpperCase();
+        char firstCharacter = card.charAt(0);
+        char secondCharacter = card.charAt(1);
+        if (card.length() == 3) {
+            thirdCharacter = card.charAt(2);
+        }
+
+
+        if (firstCharacter == 'A') {
+            rank = "Ace";
+        } else if (firstCharacter == 'K') {
+            rank = "King";
+        } else if (firstCharacter == 'Q') {
+            rank = "Queen";
+        } else if (firstCharacter == 'J') {
+            rank = "Jack";
+        } else if (firstCharacter == '1') {
+            rank = "Ten";
+        } else if (firstCharacter == '9') {
+            rank = "Nine";
+        } else if (firstCharacter == '8') {
+            rank = "Eight";
+        } else if (firstCharacter == '7') {
+            rank = "Seven";
+        } else if (firstCharacter == '6') {
+            rank = "Six";
+        } else if (firstCharacter == '5') {
+            rank = "Five";
+        } else if (firstCharacter == '4') {
+            rank = "Four";
+        } else if (firstCharacter == '3') {
+            rank = "Three";
+        } else if (firstCharacter == '2') {
+            rank = "Two";
+        }
+
+        if (secondCharacter == 'C' || thirdCharacter == 'C') {
+            suit = "Clubs";
+        } else if (secondCharacter == 'D' || thirdCharacter == 'D') {
+            suit = "Diamonds";
+        } else if (secondCharacter == 'H' || thirdCharacter == 'H') {
+            suit = "Hearts";
+        } else if (secondCharacter == 'S' || thirdCharacter == 'S') {
+            suit = "Spades";
+        }
+
+        System.out.println("\n" + rank + " of " + suit + ".");
     }
     
     /*
@@ -225,8 +297,9 @@ public class ProblemSet3 {
      */
     
     public void leapYear() {
-
+        
     }
+    
     
     /*
      * Exercise 8.
@@ -236,7 +309,7 @@ public class ProblemSet3 {
      */
     
     public void state() {
-
+        
     }
     
     /*
@@ -246,8 +319,8 @@ public class ProblemSet3 {
      */
     
     public void months() {        
-
-    }
+        
+    }   
     
     /*
      * Exercise 10.
@@ -256,6 +329,6 @@ public class ProblemSet3 {
      */
     
     public void salary() {
-
-    }
+        
+    
 }
